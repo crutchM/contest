@@ -1,0 +1,17 @@
+services:
+  contest-app:
+    build: ./
+    command: ./contest-app
+    depends_on:
+      - db
+  db:
+    restart: always
+    image: postgres
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgres/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=qwerty
+      - POSTGRES_DB=contest
+    networks:
+      - default
