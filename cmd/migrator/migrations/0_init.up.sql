@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS tests (
+    id SERIAL PRIMARY KEY,
+    task_id INTEGER NOT NULL,
+    input VARCHAR(256) NOT NULL,
+    expected_result VARCHAR(256) NOT NULL,
+    points INTEGER NOT NULL
+);
